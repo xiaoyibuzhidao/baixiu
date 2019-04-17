@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 1. 引入文件, css, js -->
+    <link rel="stylesheet" href="../assets/vendors/wangEditor/wangEditor.min.css">
+</head>
+<body>
+    <textarea name="" id="tt" cols="30" rows="10"></textarea>
+    <!-- 2. 准备父盒子 -->
+    <div id="box"></div>
+
+    <script src="../assets/vendors/wangEditor/wangEditor.min.js"></script>
+
+    <script>
+        // 调用方法
+        var E = window.wangEditor;
+        var editor = new E('#box');
+        //富文本编辑器中的内容发生变化,就会触发事件处理函数
+        editor.customConfig.onchange = function(html){
+            //html可以接收到富文本编辑器里面的内容
+            tt.innerHTML = html;
+
+        }
+        editor.create();
+    
+    </script>
+
+
+</body>
+</html>
